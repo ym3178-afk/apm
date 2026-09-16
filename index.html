@@ -57,6 +57,56 @@ body{perspective:1400px}.page{transform-style:preserve-3d}.hero,.section,.cta{tr
   .note{padding:20px 22px}.note p{font-size:18px}
 }
 
+
+/* iPhone / small-screen art direction — designed separately, not just scaled */
+@media (max-width: 780px){
+  html,body{overflow-x:hidden;background:var(--paper)}
+  body{perspective:none}
+  .grain{opacity:.09}
+  .page{width:100%;margin:0;box-shadow:none;overflow:hidden}
+  .nav{padding:13px 18px;min-height:50px;background:#efede8f2}
+  .mark{font-size:10px;letter-spacing:.12em}.links{display:none!important}
+  .hero{display:flex;flex-direction:column;gap:0;padding:0;min-height:0;border-bottom:1px solid var(--line)}
+  .cover-photo{order:0;width:100%;height:min(112vw,520px);min-height:0;border:0;border-bottom:1px solid var(--line);box-shadow:none;transform:none!important}
+  .cover-photo img{object-position:center 43%;transform:none!important}
+  .cover-caption{left:14px;bottom:13px;font-size:8px;padding:6px 8px}
+  .hero>div{order:1;padding:30px 20px 34px;display:block;transform:none!important}
+  .eyebrow,.label{font-size:9px;letter-spacing:.16em}
+  .hero h1{font-size:clamp(54px,17vw,76px);line-height:.86;margin:22px 0 20px;letter-spacing:-.06em}
+  .hero h2{font-size:15px;line-height:1.45;margin-bottom:16px}
+  .intro{font-size:13px;line-height:1.75;max-width:none}
+  .meta{display:grid;grid-template-columns:1fr;gap:5px;margin-top:24px;font-size:11px}
+  .note{margin:28px 5px 4px!important;padding:20px 18px;box-shadow:5px 6px 0 #cbc7bd;transform:rotate(.7deg)!important}
+  .note p{font-size:18px;line-height:1.5;margin-top:10px}
+  .section{padding:44px 20px;transform:none!important}
+  .section-head{display:block;margin-bottom:28px}
+  .section-head .num{margin-bottom:9px}.section-head h3{font-size:31px}
+  .edu-row{grid-template-columns:1fr;gap:6px;padding:18px 0}.edu-row strong{font-size:16px}.date{font-size:11px}
+  .course-block{margin-top:25px;padding-top:20px}.course-tags{gap:7px}.course-tags span{padding:8px 9px;font-size:10px;line-height:1.35;max-width:100%}
+  .project-hero{display:block;padding-bottom:32px}.project-title{font-size:32px;line-height:1.15;margin:12px 0 16px}.project-title br{display:none}
+  .project-brief{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;margin-top:26px;font-size:13px}
+  .flow-wrap{padding:27px 0;margin:4px 0 34px}.flow-title{display:block;margin-bottom:18px}.flow-title>.sub{margin-top:5px}
+  .flow{display:flex;gap:8px;overflow-x:auto;padding:2px 1px 12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.flow::-webkit-scrollbar{height:3px}.flow::-webkit-scrollbar-thumb{background:var(--line)}
+  .step{flex:0 0 132px;min-height:92px;scroll-snap-align:start;padding:12px;background:#ebe8e1}
+  .case-grid{grid-template-columns:1fr}.case{padding:23px 20px}.case h4{font-size:21px}.case p{font-size:12.5px;line-height:1.75}
+  .prototype-shot{margin-top:34px;padding:12px}.prototype-shot>div:first-child{display:block!important;margin-bottom:13px!important}.prototype-shot>div:first-child>div:last-child{margin-top:6px}.prototype-shot [style*="font-size:30px"]{font-size:22px!important;line-height:1.25}
+  .browser{min-height:0;transform:none!important;box-shadow:7px 9px 20px #59544a18}.browser-top{height:28px}.mock{display:block;min-height:0}.mock-side{display:none}.mock-main{padding:28px 20px 30px}.mock-main h5{font-size:27px;line-height:1.18;margin:10px 0 16px}.quote{padding:14px 15px;font-size:10.5px;line-height:1.7}.chips{gap:6px;margin-top:16px}.chip{font-size:8px;padding:6px 7px}
+  .eval{display:block;margin-top:38px}.eval-copy h4{font-size:26px;line-height:1.2}.eval-copy h4 br{display:none}.bars{margin-top:27px}.barrow{padding:16px 0}.barhead{font-size:11px}.track{height:6px;margin-bottom:12px}.after{top:9px}.legend{margin-top:14px}
+  .metrics{grid-template-columns:1fr 1fr;margin-top:30px}.metric{padding:18px 14px;min-width:0}.metric span{font-size:29px}.metric small{font-size:9px;line-height:1.35;display:block}
+  .skills{grid-template-columns:1fr;gap:22px}.skill{padding-top:14px}.skill p{font-size:12.5px;line-height:1.7}
+  .cta{display:block;padding:42px 20px}.cta h3{font-size:34px;margin:7px 0 24px}.button{width:100%;text-align:center;padding:14px 16px}
+  .footer{padding:22px 20px 30px;font-size:9px;display:block}.footer div+div{margin-top:5px}
+  .flow .step:hover,.case:hover,.metric:hover,.note:hover{transform:none!important;box-shadow:none}
+}
+@media (max-width: 390px){
+  .hero h1{font-size:56px}.cover-photo{height:118vw}.section{padding-left:17px;padding-right:17px}.hero>div{padding-left:17px;padding-right:17px}.project-title{font-size:29px}.metrics{grid-template-columns:1fr 1fr}.metric span{font-size:26px}
+}
+
+
+/* Portrait cover: preserve original 4:3 image, show the complete frame */
+.cover-photo{height:auto!important;min-height:0!important;max-height:none!important;align-self:center;aspect-ratio:4/3;background:#d7d2ca}
+.cover-photo img{width:100%;height:100%;object-fit:contain!important;object-position:center!important;transform:none!important}
+@media(max-width:780px){.cover-photo{width:100%;height:auto!important;aspect-ratio:4/3;min-height:0!important;max-height:none!important}.cover-photo img{object-fit:contain!important;object-position:center!important;transform:none!important}}
 </style></head><body><div class='grain'></div><main class='page'>
 <nav class='nav'><div class='mark'>YIZHANG MU / AI PRODUCT</div><div class='links'><a href='#education'>Education</a><a href='#xiuliu'>Case Study</a><a href='#skills'>Capabilities</a></div></nav>
 <header class='hero'><div><div class='eyebrow'>AI Product · Agent · Evidence-first systems</div><h1>Yizhang<br><em>Mu.</em></h1><h2>AI 产品经理 / Agent 产品设计 / Computational Design</h2><p class='intro'>我关注的不是让 AI “多说一点”，而是如何让它在真实产品里更可靠地完成任务：知道何时检索、引用什么证据、什么时候应该停止，以及如何被持续评测和迭代。</p><div class='meta'><span>New York</span><a href='mailto:elianmu238@gmail.com'>elianmu238@gmail.com</a><span>18992051380</span></div><aside class='note' style='margin-top:42px'><div class='label'>WORKING NOTE / 01</div><p>LLM 做理解，系统做规则。<br>Evidence before confidence.</p></aside></div><figure class='cover-photo'><img src='cover.jpg' alt='Yizhang Mu at Columbia GSAPP'><figcaption class='cover-caption'>COLUMBIA GSAPP · NEW YORK / 2026</figcaption></figure></header>
@@ -69,5 +119,5 @@ body{perspective:1400px}.page{transform-style:preserve-3d}.hero,.section,.cta{tr
 <div class='metrics'><div class='metric'><span>94.7</span><small>导读 V3</small></div><div class='metric'><span>0.8%</span><small>严重幻觉 · from 7.5%</small></div><div class='metric'><span>97%</span><small>工具路由准确率</small></div><div class='metric'><span>97%</span><small>三次运行一致率</small></div></div></section>
 <section class='section' id='skills'><div class='section-head'><div class='num'>03 / CAPABILITIES</div><h3>Capabilities</h3></div><div class='skills'><div class='skill'><h4>AI / 技术</h4><p>Python · SQL · LLM 应用 · 结构感知 RAG · Agent 工作流 · 工具路由 · Prompt 工程 · Git</p></div><div class='skill'><h4>AI 产品</h4><p>用户场景洞察 · AI 功能定义与边界拆分 · AI 交互设计 · AI 评测与上线门禁 · Bad Case 归因 · 降级与兜底</p></div><div class='skill'><h4>产品 / 数据</h4><p>用户研究 · 指标体系 · 数据实验设计 · 用户行为分析 · 转化漏斗 · 数据复盘 · 产品方案设计</p></div><div class='skill'><h4>原型 / 工具</h4><p>Figma · Web Prototype · Excel · PowerPoint · Photoshop · Illustrator</p></div></div></section>
 <section class='cta'><div><div class='label'>LIVE PRODUCT</div><h3>See Xiuliu in action.</h3></div><a class='button' href='https://ym3178-afk.github.io/xinliu-of-yizhang/' target='_blank'>VIEW PROTOTYPE ↗</a></section><footer class='footer'><div>YIZHANG MU · NEW YORK · 2026</div><div>Quiet interface. Measurable intelligence.</div></footer></main><script>
-(()=>{const page=document.querySelector('.page'); requestAnimationFrame(()=>page&&page.classList.add('loaded')); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; document.querySelectorAll('.section,.cta').forEach(el=>el.classList.add('reveal')); if(!reduce&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); const photo=document.querySelector('.cover-photo img'); const hero=document.querySelector('.cover-photo'); if(photo&&hero&&!reduce){hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;photo.style.transform=`scale(1.035) translate(${x*-10}px,${y*-8}px)`});hero.addEventListener('mouseleave',()=>photo.style.transform='scale(1)');window.addEventListener('scroll',()=>{const r=hero.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight) photo.style.objectPosition=`center ${42+Math.max(-5,Math.min(5,-r.top*.012))}%`},{passive:true})} const b=document.querySelector('.browser');const wrap=document.querySelector('.prototype-shot');if(b&&wrap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){wrap.addEventListener('mousemove',e=>{const r=wrap.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;b.style.transform=`rotateX(${2.5-y*6}deg) rotateY(${-3+x*8}deg) translateZ(18px)`});wrap.addEventListener('mouseleave',()=>b.style.transform='rotateX(2.5deg) rotateY(-3deg) translateZ(12px)')}const n=document.querySelector('.note');if(n&&!matchMedia('(prefers-reduced-motion: reduce)').matches){window.addEventListener('scroll',()=>{const y=Math.min(scrollY*.025,10);n.style.marginTop=`${y}px`},{passive:true})}})();
+(()=>{const page=document.querySelector('.page'); requestAnimationFrame(()=>page&&page.classList.add('loaded')); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; document.querySelectorAll('.section,.cta').forEach(el=>el.classList.add('reveal')); if(!reduce&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); const photo=document.querySelector('.cover-photo img'); const hero=document.querySelector('.cover-photo'); if(photo&&hero&&!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;photo.style.transform='none'});hero.addEventListener('mouseleave',()=>photo.style.transform='none');window.addEventListener('scroll',()=>{const r=hero.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight) photo.style.objectPosition=`center ${42+Math.max(-5,Math.min(5,-r.top*.012))}%`},{passive:true})} const b=document.querySelector('.browser');const wrap=document.querySelector('.prototype-shot');if(b&&wrap&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(hover:hover) and (pointer:fine)').matches){wrap.addEventListener('mousemove',e=>{const r=wrap.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;b.style.transform=`rotateX(${2.5-y*6}deg) rotateY(${-3+x*8}deg) translateZ(18px)`});wrap.addEventListener('mouseleave',()=>b.style.transform='rotateX(2.5deg) rotateY(-3deg) translateZ(12px)')}const n=document.querySelector('.note');if(n&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&innerWidth>780){window.addEventListener('scroll',()=>{const y=Math.min(scrollY*.025,10);n.style.marginTop=`${y}px`},{passive:true})}})();
 </script></body></html>
