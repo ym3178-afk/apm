@@ -309,6 +309,356 @@ body[data-lang="zh"] .lang.zh { display: inline !important; }
   .pc-stats strong { font-size: 1.55rem; }
   .pc-stats span { font-size: .54rem; }
 }
+
+/* =========================================================
+   V23 — Chinese typography system
+   English styling is unchanged. Chinese uses a dedicated
+   editorial CJK serif/sans system with adjusted scale,
+   tracking and line-height for better visual balance.
+   ========================================================= */
+:root {
+  --zh-serif: "Songti SC", "STSong", "Noto Serif CJK SC",
+              "Source Han Serif SC", "SimSun", serif;
+  --zh-sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
+             "Source Han Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+/* Chinese base text */
+body[data-lang="zh"] {
+  font-family: var(--zh-sans);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+}
+
+/* Chinese display / editorial serif */
+body[data-lang="zh"] .centered-name,
+body[data-lang="zh"] .centered-role,
+body[data-lang="zh"] .centered-copy,
+body[data-lang="zh"] .cover-quote,
+body[data-lang="zh"] .about-edu-heading,
+body[data-lang="zh"] .about-edu-copy,
+body[data-lang="zh"] .education-band-title h3,
+body[data-lang="zh"] .education-school-compact strong,
+body[data-lang="zh"] .coursework-compact strong,
+body[data-lang="zh"] .pc-title h2,
+body[data-lang="zh"] .pc-project-num,
+body[data-lang="zh"] .pc-project-main h3,
+body[data-lang="zh"] .pc-project-sub,
+body[data-lang="zh"] .pc-project-summary,
+body[data-lang="zh"] .pc-stats strong,
+body[data-lang="zh"] .pc-case-label h3,
+body[data-lang="zh"] .pc-n,
+body[data-lang="zh"] .pc-h,
+body[data-lang="zh"] .pc-t,
+body[data-lang="zh"] .section-title,
+body[data-lang="zh"] .skill-no,
+body[data-lang="zh"] .skill-title,
+body[data-lang="zh"] .footer-center {
+  font-family: var(--zh-serif) !important;
+}
+
+/* Chinese small / metadata type */
+body[data-lang="zh"] .nav,
+body[data-lang="zh"] .brand,
+body[data-lang="zh"] .lang-toggle,
+body[data-lang="zh"] .cover-meta-top,
+body[data-lang="zh"] .cover-pretitle,
+body[data-lang="zh"] .centered-stack,
+body[data-lang="zh"] .eyebrow,
+body[data-lang="zh"] .section-kicker,
+body[data-lang="zh"] .about-edu-photo-meta,
+body[data-lang="zh"] .about-edu-contact,
+body[data-lang="zh"] .education-school-compact,
+body[data-lang="zh"] .coursework-compact,
+body[data-lang="zh"] .pc-project-meta,
+body[data-lang="zh"] .pc-stats span,
+body[data-lang="zh"] .skill-body,
+body[data-lang="zh"] .footer {
+  font-family: var(--zh-sans) !important;
+}
+
+/* Cover: Chinese glyphs need different scale and tracking than Latin capitals. */
+body[data-lang="zh"] .cover-pretitle {
+  letter-spacing: .12em !important;
+  font-size: clamp(.68rem, .9vw, .78rem) !important;
+}
+
+body[data-lang="zh"] .centered-name {
+  font-size: clamp(6.2rem, 10vw, 8.8rem) !important;
+  line-height: .95 !important;
+  letter-spacing: .075em !important;
+  font-weight: 500 !important;
+}
+
+body[data-lang="zh"] .centered-role {
+  font-size: clamp(1.08rem, 1.55vw, 1.38rem) !important;
+  line-height: 1.45 !important;
+  letter-spacing: .075em !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+body[data-lang="zh"] .centered-stack {
+  font-size: clamp(.8rem, 1.05vw, .94rem) !important;
+  line-height: 1.65 !important;
+  letter-spacing: .025em !important;
+}
+
+body[data-lang="zh"] .centered-copy {
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem) !important;
+  line-height: 1.78 !important;
+  letter-spacing: .015em !important;
+  max-width: 38rem !important;
+}
+
+body[data-lang="zh"] .cover-quote {
+  font-style: normal !important;
+  font-size: clamp(1rem, 1.2vw, 1.12rem) !important;
+  line-height: 1.75 !important;
+  letter-spacing: .02em !important;
+}
+
+/* Navigation / microcopy */
+body[data-lang="zh"] .brand {
+  letter-spacing: .14em !important;
+  font-weight: 500 !important;
+}
+
+body[data-lang="zh"] .nav-links a,
+body[data-lang="zh"] .lang-toggle {
+  letter-spacing: .055em !important;
+}
+
+body[data-lang="zh"] .eyebrow,
+body[data-lang="zh"] .section-kicker {
+  letter-spacing: .08em !important;
+  text-transform: none !important;
+}
+
+/* About / Education */
+body[data-lang="zh"] .about-edu-heading {
+  font-size: clamp(3.9rem, 5.8vw, 5.15rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .035em !important;
+  font-weight: 500 !important;
+}
+
+body[data-lang="zh"] .about-edu-copy {
+  font-size: clamp(1rem, 1.2vw, 1.08rem) !important;
+  line-height: 1.82 !important;
+  letter-spacing: .012em !important;
+}
+
+body[data-lang="zh"] .about-edu-copy .dropcap::first-letter {
+  font-family: var(--zh-serif) !important;
+  font-size: 3.5em !important;
+  line-height: .82 !important;
+  padding-right: .12em !important;
+  padding-top: .06em !important;
+}
+
+body[data-lang="zh"] .about-edu-contact {
+  font-size: .82rem !important;
+  line-height: 1.6 !important;
+}
+
+body[data-lang="zh"] .education-band-title h3 {
+  font-size: clamp(2.4rem, 3.7vw, 3.1rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: .035em !important;
+  font-weight: 500 !important;
+}
+
+body[data-lang="zh"] .education-school-compact {
+  font-size: clamp(.86rem, 1.05vw, .94rem) !important;
+  line-height: 1.72 !important;
+}
+
+body[data-lang="zh"] .education-school-compact strong {
+  font-size: clamp(1.03rem, 1.25vw, 1.12rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: .015em !important;
+}
+
+body[data-lang="zh"] .coursework-compact {
+  font-size: clamp(.8rem, .98vw, .9rem) !important;
+  line-height: 1.72 !important;
+}
+
+/* Projects + Case Study */
+body[data-lang="zh"] .pc-title h2 {
+  font-size: clamp(3rem, 4.5vw, 4rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .04em !important;
+}
+
+body[data-lang="zh"] .pc-project-main h3 {
+  font-size: clamp(3rem, 4vw, 3.7rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+}
+
+body[data-lang="zh"] .pc-project-sub {
+  font-size: clamp(1.08rem, 1.42vw, 1.28rem) !important;
+  line-height: 1.55 !important;
+  letter-spacing: .015em !important;
+}
+
+body[data-lang="zh"] .pc-project-summary {
+  font-size: clamp(.86rem, 1.05vw, .93rem) !important;
+  line-height: 1.75 !important;
+}
+
+body[data-lang="zh"] .pc-case-label h3 {
+  font-size: clamp(2.05rem, 3vw, 2.55rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: .035em !important;
+}
+
+body[data-lang="zh"] .pc-h {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem) !important;
+  line-height: 1.5 !important;
+  letter-spacing: .015em !important;
+  font-weight: 600 !important;
+}
+
+body[data-lang="zh"] .pc-t {
+  font-size: clamp(.8rem, .92vw, .88rem) !important;
+  line-height: 1.76 !important;
+  letter-spacing: .008em !important;
+}
+
+/* Skills */
+body[data-lang="zh"] .section-title {
+  font-size: clamp(3rem, 4.7vw, 4.2rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .035em !important;
+}
+
+body[data-lang="zh"] .skill-title {
+  font-size: clamp(1.62rem, 2.4vw, 2rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: .02em !important;
+  font-weight: 600 !important;
+}
+
+body[data-lang="zh"] .skill-body {
+  font-size: clamp(.92rem, 1.1vw, 1rem) !important;
+  line-height: 1.82 !important;
+  letter-spacing: .008em !important;
+}
+
+/* Footer */
+body[data-lang="zh"] .footer {
+  line-height: 1.72 !important;
+}
+
+body[data-lang="zh"] .footer-center {
+  font-style: normal !important;
+  letter-spacing: .015em !important;
+}
+
+/* Tablet */
+@media (max-width: 991px) and (min-width: 768px) {
+  body[data-lang="zh"] .centered-name {
+    font-size: clamp(5.6rem, 12vw, 7.2rem) !important;
+  }
+  body[data-lang="zh"] .about-edu-copy {
+    line-height: 1.78 !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  body[data-lang="zh"] .centered-name {
+    font-size: clamp(4.3rem, 18vw, 6rem) !important;
+    letter-spacing: .08em !important;
+  }
+
+  body[data-lang="zh"] .centered-role {
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    letter-spacing: .055em !important;
+  }
+
+  body[data-lang="zh"] .centered-stack {
+    font-size: .78rem !important;
+    line-height: 1.7 !important;
+  }
+
+  body[data-lang="zh"] .centered-copy {
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+  }
+
+  body[data-lang="zh"] .about-edu-heading {
+    font-size: clamp(3.5rem, 14vw, 4.35rem) !important;
+  }
+
+  body[data-lang="zh"] .about-edu-copy {
+    font-size: .98rem !important;
+    line-height: 1.84 !important;
+  }
+
+  body[data-lang="zh"] .education-band-title h3 {
+    font-size: 2.55rem !important;
+  }
+
+  body[data-lang="zh"] .pc-title h2 {
+    font-size: 2.75rem !important;
+  }
+
+  body[data-lang="zh"] .pc-project-main h3 {
+    font-size: 2.75rem !important;
+  }
+
+  body[data-lang="zh"] .pc-case-label h3 {
+    font-size: 2.2rem !important;
+  }
+
+  body[data-lang="zh"] .pc-h {
+    font-size: 1.22rem !important;
+    line-height: 1.45 !important;
+  }
+
+  body[data-lang="zh"] .pc-t {
+    font-size: .94rem !important;
+    line-height: 1.8 !important;
+  }
+
+  body[data-lang="zh"] .section-title {
+    font-size: 2.85rem !important;
+  }
+
+  body[data-lang="zh"] .skill-title {
+    font-size: 1.62rem !important;
+  }
+
+  body[data-lang="zh"] .skill-body {
+    font-size: .95rem !important;
+    line-height: 1.8 !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 479px) {
+  body[data-lang="zh"] .centered-name {
+    font-size: clamp(4rem, 21vw, 5.4rem) !important;
+    letter-spacing: .07em !important;
+  }
+
+  body[data-lang="zh"] .nav-links a,
+  body[data-lang="zh"] .lang-toggle {
+    font-size: .67rem !important;
+    letter-spacing: .025em !important;
+  }
+
+  body[data-lang="zh"] .about-edu-heading {
+    font-size: clamp(3.3rem, 15vw, 4rem) !important;
+  }
+}
+
 </style>
 </head>
 <body data-lang="en">
